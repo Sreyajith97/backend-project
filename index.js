@@ -609,7 +609,7 @@ server.post("/get-replies", (req, res) => {
   let maxLimit = 5;
   Comment.findOne({ _id}).populate({
     path: "children",
-    Option: {
+    options: {
       limit: maxLimit,
       skip: skip,
       sort: {
